@@ -15,27 +15,9 @@
 class FullyHomomorphic {
  private:
   static unsigned int MAX_SOMEWHAT_PUBLIC_KEY_TRIES;
-  // Wanted to make these consts, but I can't since I need to init a bigint in each
   SecuritySettings *sec;
-  /*
-  unsigned long int lambda;
-  unsigned long int gamma;
-  unsigned long int eta;
-  unsigned long int rho;
-  unsigned long int rho_;
-  unsigned long int tau;
-  unsigned long int kappa;
-  unsigned long int theta;
-  unsigned long int big_theta;
-  */
   gmp_randstate_t rand_state;
   CryptoPP::RandomPool rng;
-
-  /*
-  unsigned long int private_key_length;
-  unsigned long int public_key_old_key_length;
-  unsigned long int public_key_y_vector_length;
-  */
 
   void create_somewhat_private_key(SomewhatPrivateKey private_key);
   void create_somewhat_public_key(SomewhatPublicKey result, SomewhatPrivateKey sk);

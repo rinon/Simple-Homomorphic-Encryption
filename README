@@ -1,0 +1,40 @@
+Implementation of a Simply Homomorphic Encryption Scheme.
+
+This is an implementation of a integer-only fully homomorphic
+encryption scheme devised by van Dijk et
+al. (http://eprint.iacr.org/2009/616). While this scheme is certainly
+not the most efficient homomorphic encryption scheme devised to date,
+it remains comparatively simple, which could be beneficial for those
+who are interested in learning the basics of modern homomorphic
+encryption schemes.
+
+Status:
+
+Implementation is finished, although the third stage of the decryption
+circuit seems to be too deep to practically evaluate it with this
+implementation. More documentation will be written soon, but to see a
+sample usage of this project, check out demo_vote_counter.cpp.
+
+Compilation:
+
+Requirements:
+GNU g++ compiler
+make
+
+To compile, simply run make in the source directory.
+To compile the test suite, run "make test".
+To compile a sample application based on this project (see below), run "make demo".
+
+Demo project (Vote Counting):
+
+The vote counter encrypts each vote as a bit vector where each bit
+corresponds to the vote for the respective candidate (only one bit in
+the vector should be 1, since this application assumes only one
+candidate can be voted for). It then homomorphicaly evaluates an
+addition circuit on the vectors, and decrypts the resulting vectors,
+showing the results of the election.
+
+Although this is an overly simple application of fully homomorphic
+encryption, the additions are performed using the dynamic programming
+approach used in step 2 of the decryption circuit as described in the
+paper above, as a proof of concept for that step.
